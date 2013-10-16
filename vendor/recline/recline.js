@@ -3633,7 +3633,9 @@ my.Map = Backbone.View.extend({
     var googleTerrain = new L.Google('TERRAIN');
 
     this.map = new L.Map(this.$map.get(0), {
-                  layers: [googleRoadmapLayer, googleSatelliteLayer, googleHybridLayer, googleTerrain, bg]
+                  layers: [googleRoadmapLayer, googleSatelliteLayer, googleHybridLayer, googleTerrain, bg],
+                  center: new L.LatLng(24.0476, 121.5171),
+                  zoom: 7 
     });
 
     var baseMaps = {
@@ -3654,7 +3656,7 @@ my.Map = Backbone.View.extend({
         this);
     this.features = new L.GeoJSON(null, this.geoJsonLayerOptions);
 
-    this.map.setView([0, 0], 2);
+    //this.map.setView([0, 0], 2);
 
     this.mapReady = true;
   },
