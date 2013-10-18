@@ -3342,7 +3342,7 @@ my.Map = Backbone.View.extend({
     // onEachFeature default which adds popup in
     onEachFeature: function(feature, layer) {
       if (feature.properties && feature.properties.popupContent) {
-        layer.bindPopup(feature.properties.popupContent + "<p><button class='to-google-streetview' onClick=\"window.open('https://maps.google.com/maps?q=&layer=c&cbll=" + feature.coordinates[1] + "," + feature.coordinates[0] + "&cbp=12,270');\">前往Google街景</button></p>");
+        layer.bindPopup( "<p><button class='to-google-streetview' onClick=\"window.open('https://maps.google.com/maps?q=&layer=c&cbll=" + feature.coordinates[1] + "," + feature.coordinates[0] + "&cbp=12,270');\">前往Google街景</button></p>"+ feature.properties.popupContent) ;
         console.log(layer);
       }
     }
